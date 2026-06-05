@@ -132,9 +132,9 @@ Plattformprofils getestet werden, ohne bestehende Kernregeln zu ändern.
   passenden Ebene; Bugfixes benötigen einen Regressionstest.
 - **CA-003 UX Consistency**: Dieselbe fachliche Aktion muss in Desktop, Web, API
   und MCP dieselben Resultate und Fehlertypen liefern.
-- **CA-004 Performance**: Interaktive Bearbeitung, Undo/Redo, Rendering und
-  Import/Export müssen ohne wahrnehmbare Verzögerung bleiben und messbar
-  abgesichert werden.
+- **CA-004 Performance**: Interaktive Bearbeitungsaktionen müssen p95 unter 50
+  ms bleiben; Preview-Renderings müssen p95 unter 250 ms bleiben; Import- und
+  Exportpfade müssen messbar gegen diese Budgets abgesichert werden.
 
 ### Key Entities _(include if feature involves data)_
 
@@ -167,7 +167,8 @@ Plattformprofils getestet werden, ohne bestehende Kernregeln zu ändern.
 - **SC-004**: Ein neuer Export- oder Import-Adapter kann ergänzt werden, ohne
   bestehende Frontends oder Kernregeln ändern zu müssen.
 - **SC-005**: Interaktive Bearbeitungsaktionen bleiben für typische
-  Sprite-Projekte ohne wahrnehmbare Verzögerung bedienbar.
+  Sprite-Projekte mit p95 unter 50 ms bedienbar; Preview-Renderings bleiben p95
+  unter 250 ms.
 - **SC-006**: Die erste vollständige Referenzimplementierung deckt Bearbeitung,
   Import, Export, Rendering und Undo/Redo über den Kern ohne UI-Abhängigkeit ab.
 
