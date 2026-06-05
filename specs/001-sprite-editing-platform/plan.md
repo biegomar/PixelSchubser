@@ -70,7 +70,8 @@ specs/001-sprite-editing-platform/
 ├── plan.md
 ├── research.md
 ├── data-model.md
-└── quickstart.md
+├── quickstart.md
+└── implementation-sequence.md
 ```
 
 ### Source Code (repository root)
