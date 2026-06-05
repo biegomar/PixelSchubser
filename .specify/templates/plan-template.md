@@ -4,11 +4,13 @@
 
 **Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See
+`.specify/templates/plan-template.md` for the execution workflow.
 
 ## Summary
 
-[Extract from feature spec: primary requirement + technical approach from research]
+[Extract from feature spec: primary requirement + technical approach from
+research]
 
 ## Technical Context
 
@@ -18,7 +20,8 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]
+**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS
+CLARIFICATION]
 
 **Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]
 
@@ -28,19 +31,32 @@
 
 **Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
 
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]
+**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app
+or NEEDS CLARIFICATION]
 
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps
+or NEEDS CLARIFICATION]
 
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]
+**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory,
+offline-capable or NEEDS CLARIFICATION]
 
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS
+CLARIFICATION]
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-[Gates determined based on constitution file]
+- **Code Quality Gate**: Confirm design preserves architecture boundaries and
+  justifies any non-trivial complexity with a simpler rejected alternative.
+- **Testing Gate**: Define mandatory test levels (domain, application,
+  adapter/contract) and explicit regression-test expectations for bug work.
+- **UX Consistency Gate**: Identify cross-adapter behavior impacts and document
+  any intentional deviations.
+- **Performance Gate**: Define measurable budgets for impacted critical paths
+  and how measurements will be captured.
+- **Architecture Decision Gate**: Record any boundary pressure/trade-offs and
+  required approvals before implementation.
 
 ## Project Structure
 
@@ -57,6 +73,7 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
+
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
   for this feature. Delete unused options and expand the chosen structure with
@@ -107,7 +124,7 @@ directories captured above]
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |
