@@ -15,7 +15,8 @@ der Anforderungen und der Architektur Prinzipien"
 
 Als Anwender möchte ich Sprite-Projekte unabhängig von einer konkreten
 Benutzeroberfläche bearbeiten können, damit dieselben Bearbeitungsfunktionen in
-Desktop, Web, API, MCP und Headless-Workflows identisch verfügbar sind.
+Desktop, API, MCP und Headless-Workflows identisch verfügbar sind und ein
+spaeterer Web-Adapter denselben fachlichen Vertrag nutzen kann.
 
 **Why this priority**: Die fachliche Bearbeitung ist der primäre Wert des
 Produkts und die Grundlage aller Adapter.
@@ -107,8 +108,10 @@ Plattformprofils getestet werden, ohne bestehende Kernregeln zu ändern.
   PNG, Spritesheet-PNG, Assembler-Source und BASIC-2.0-Listen.
 - **FR-006**: Das System muss Projektverwaltung für neues Projekt, Laden,
   Speichern, Autosave und Recent Files bereitstellen.
-- **FR-007**: Das System muss Rendering für Desktop UI, Web UI, API Preview, MCP
-  Preview und PNG-Ausgabe unterstützen.
+- **FR-007**: Das System muss im ersten Implementierungsschnitt Rendering für
+  Desktop UI, API Preview, MCP Preview und PNG-Ausgabe unterstützen; Web UI ist
+  als Follow-up-Adapter vorgesehen und muss denselben fachlichen
+  Rendering-Vertrag verwenden.
 - **FR-008**: Das System muss alle zentralen Bearbeitungsfunktionen
   programmatisch über REST API und MCP-Tools zugänglich machen.
 - **FR-009**: Das System muss neue Frontends, Formate, Renderer und
@@ -130,8 +133,10 @@ Plattformprofils getestet werden, ohne bestehende Kernregeln zu ändern.
   Adaptertrennung und keine fachliche Logik in UI-, API- oder MCP-Schichten.
 - **CA-002 Testing**: Jede Kernfunktion benötigt automatisierte Tests auf der
   passenden Ebene; Bugfixes benötigen einen Regressionstest.
-- **CA-003 UX Consistency**: Dieselbe fachliche Aktion muss in Desktop, Web, API
-  und MCP dieselben Resultate und Fehlertypen liefern.
+- **CA-003 UX Consistency**: Dieselbe fachliche Aktion muss in den aktuell
+  umgesetzten Adaptern Desktop, API und MCP dieselben Resultate und Fehlertypen
+  liefern; ein spaeterer Web-Adapter muss denselben fachlichen Vertrag
+  einhalten.
 - **CA-004 Performance**: Interaktive Bearbeitungsaktionen müssen p95 unter 50
   ms bleiben; Preview-Renderings müssen p95 unter 250 ms bleiben; Import- und
   Exportpfade müssen messbar gegen diese Budgets abgesichert werden.
@@ -176,8 +181,9 @@ Plattformprofils getestet werden, ohne bestehende Kernregeln zu ändern.
 
 - Die erste Spezifikation fokussiert auf den C64-Kern und bereitet spätere
   Plattformprofile vor.
-- Desktop, Web, API und MCP sind gleichwertige Adapter auf denselben fachlichen
-  Kern.
+- Desktop, API und MCP sind gleichwertige Adapter auf denselben fachlichen Kern
+  der ersten Referenzimplementierung; ein Web-Adapter ist als Folgeschritt
+  eingeplant und nutzt denselben Kern.
 - C64-spezifische Import- und Exportformate haben Vorrang vor späteren
   optionalen Formaten.
 - Performance wird primär aus Anwendersicht über spürbare Reaktionsfähigkeit und

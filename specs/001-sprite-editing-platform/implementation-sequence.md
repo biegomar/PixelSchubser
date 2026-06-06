@@ -5,19 +5,20 @@ Schritt auf die relevanten Stellen in den vorhandenen Implementierungsdetails.
 
 ## 1. Scope und Architektur fixieren
 
-- Ziel: Sicherstellen, dass Avalonia und API als getrennte Adapter auf denselben
-  Application-Kern umgesetzt werden.
+- Ziel: Sicherstellen, dass Avalonia, API und MCP als getrennte Adapter auf
+  denselben Application-Kern umgesetzt werden.
 - Referenzen:
   - `plan.md` -> Summary
   - `plan.md` -> Constraints
   - `plan.md` -> Structure Decision
   - `research.md` -> Decision 2 (Thin Avalonia Shell)
   - `research.md` -> Decision 2b (Thin REST API Host)
+  - `research.md` -> Decision 6 (API and MCP Included as First-Class Adapters)
 
 ## 2. Solution- und Projektstruktur anlegen
 
 - Ziel: Alle Kern- und Adapterprojekte sowie Testprojekte in der vorgesehenen
-  Topologie erstellen.
+  Topologie erstellen, inklusive MCP-Host.
 - Referenzen:
   - `plan.md` -> Source Code (repository root)
   - `quickstart.md` -> Setup
@@ -86,7 +87,17 @@ Schritt auf die relevanten Stellen in den vorhandenen Implementierungsdetails.
   - `spec.md` -> FR-008
   - `quickstart.md` -> Setup (REST API host starten)
 
-## 9. Avalonia-Adapter umsetzen
+## 9. MCP-Adapter umsetzen
+
+- Ziel: Dünnen MCP-Host erstellen, der nur in Application-Use-Cases delegiert,
+  und als self-contained single-file Artifact ausgeliefert wird.
+- Referenzen:
+  - `research.md` -> Decision 6 (API and MCP Included as First-Class Adapters)
+  - `research.md` -> Decision 7 (Self-Contained MCP Delivery)
+  - `plan.md` -> Constraints
+  - `spec.md` -> FR-008
+
+## 10. Avalonia-Adapter umsetzen
 
 - Ziel: Views/ViewModels als dünne Adapter umsetzen, ohne Fachlogik in UI.
 - Referenzen:
@@ -95,7 +106,7 @@ Schritt auf die relevanten Stellen in den vorhandenen Implementierungsdetails.
   - `spec.md` -> FR-001, FR-002, FR-007
   - `quickstart.md` -> Setup (Avalonia starten)
 
-## 10. Testpyramide und Konformitätsnachweis abschließen
+## 11. Testpyramide und Konformitätsnachweis abschließen
 
 - Ziel: Alle geforderten Testebenen und Performance-Budgets nachweisen.
 - Referenzen:
@@ -107,12 +118,12 @@ Schritt auf die relevanten Stellen in den vorhandenen Implementierungsdetails.
 
 ## Festgestellte Lücken aus der aktuellen Dokumentlage
 
-- Es gibt aktuell noch kein `tasks.md` mit konkreten, dateibasierten
-  Arbeitspaketen.
-- Die Reihenfolge war zuvor auf mehrere Dateien verteilt, aber nicht als
-  explizite Umsetzungsabfolge dokumentiert.
+- Der konkrete Taskschnitt fuer Animation-Use-Cases (Playback/FPS-Preview) muss
+  waehrend der Implementierung weiter granularisiert werden.
+- Bei API/MCP-Adapterparitaet sollten gemeinsame Test-Fixtures genutzt werden,
+  um doppelte Pflege zu vermeiden.
 
-## Nächster Schritt
+## Naechster Schritt
 
-- `speckit.tasks` ausführen, damit die obige Sequenz in konkrete Aufgaben (mit
-  Datei- und Testbezug) überführt wird.
+- Umsetzung in der Reihenfolge aus `tasks.md` starten und nach jedem
+  Story-Checkpoint die Paritaets- und Performancekriterien pruefen.
