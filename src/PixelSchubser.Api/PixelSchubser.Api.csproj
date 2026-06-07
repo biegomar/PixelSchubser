@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PixelSchubser.Application\PixelSchubser.Application.csproj" />
+    <ProjectReference Include="..\PixelSchubser.Domain\PixelSchubser.Domain.csproj" />
+    <ProjectReference Include="..\PixelSchubser.Formats\PixelSchubser.Formats.csproj" />
+    <ProjectReference Include="..\PixelSchubser.Rendering\PixelSchubser.Rendering.csproj" />
+    <ProjectReference Include="..\PixelSchubser.Infrastructure\PixelSchubser.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

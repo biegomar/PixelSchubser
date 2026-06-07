@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PixelSchubser.Api/PixelSchubser.Api.csproj" />
+    <Project Path="src/PixelSchubser.Application/PixelSchubser.Application.csproj" />
+    <Project Path="src/PixelSchubser.Avalonia/PixelSchubser.Avalonia.csproj" />
+    <Project Path="src/PixelSchubser.Domain/PixelSchubser.Domain.csproj" />
+    <Project Path="src/PixelSchubser.Formats/PixelSchubser.Formats.csproj" />
+    <Project Path="src/PixelSchubser.Infrastructure/PixelSchubser.Infrastructure.csproj" />
+    <Project Path="src/PixelSchubser.Mcp/PixelSchubser.Mcp.csproj" />
+    <Project Path="src/PixelSchubser.Rendering/PixelSchubser.Rendering.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PixelSchubser.Api.Tests/PixelSchubser.Api.Tests.csproj" />
+    <Project Path="tests/PixelSchubser.Application.Tests/PixelSchubser.Application.Tests.csproj" />
+    <Project Path="tests/PixelSchubser.Avalonia.Tests/PixelSchubser.Avalonia.Tests.csproj" />
+    <Project Path="tests/PixelSchubser.Domain.Tests/PixelSchubser.Domain.Tests.csproj" />
+    <Project Path="tests/PixelSchubser.Mcp.Tests/PixelSchubser.Mcp.Tests.csproj" />
+    <Project Path="tests/PixelSchubser.Rendering.Tests/PixelSchubser.Rendering.Tests.csproj" />
+  </Folder>
+</Solution>

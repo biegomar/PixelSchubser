@@ -55,3 +55,17 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio user-specific files
+*.user
+*.suo
+
+# Legacy and local package folders
+packages/
+
+# Universal editor/OS artifacts
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.idea/

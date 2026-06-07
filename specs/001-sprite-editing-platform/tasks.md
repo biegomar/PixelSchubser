@@ -17,19 +17,19 @@ implementable and testable.
 **Purpose**: Initialize solution and baseline project structure for hexagonal
 architecture.
 
-- [ ] T001 Create .NET solution file at PixelSchubser.sln
-- [ ] T002 Create base project files at
+- [x] T001 Create .NET solution file at PixelSchubser.sln
+- [x] T002 Create base project files at
       src/PixelSchubser.Domain/PixelSchubser.Domain.csproj and
       src/PixelSchubser.Application/PixelSchubser.Application.csproj
-- [ ] T003 [P] Create adapter project files at
+- [x] T003 [P] Create adapter project files at
       src/PixelSchubser.Avalonia/PixelSchubser.Avalonia.csproj and
       src/PixelSchubser.Api/PixelSchubser.Api.csproj and
       src/PixelSchubser.Mcp/PixelSchubser.Mcp.csproj
-- [ ] T004 [P] Create infrastructure and support project files at
+- [x] T004 [P] Create infrastructure and support project files at
       src/PixelSchubser.Infrastructure/PixelSchubser.Infrastructure.csproj,
       src/PixelSchubser.Rendering/PixelSchubser.Rendering.csproj, and
       src/PixelSchubser.Formats/PixelSchubser.Formats.csproj
-- [ ] T005 Add all projects to solution and wire project references in
+- [x] T005 Add all projects to solution and wire project references in
       PixelSchubser.sln
 
 ---
@@ -41,27 +41,27 @@ all stories.
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T006 Define domain error/result primitives in
+- [x] T006 Define domain error/result primitives in
       src/PixelSchubser.Domain/Errors/DomainError.cs and
       src/PixelSchubser.Domain/Results/DomainResult.cs
-- [ ] T007 Define application command/query abstractions in
+- [x] T007 Define application command/query abstractions in
       src/PixelSchubser.Application/Abstractions/ICommand.cs and
       src/PixelSchubser.Application/Abstractions/IQuery.cs
-- [ ] T008 [P] Define repository and storage ports in
+- [x] T008 [P] Define repository and storage ports in
       src/PixelSchubser.Application/Ports/IProjectRepository.cs and
       src/PixelSchubser.Application/Ports/ISettingsStore.cs
-- [ ] T009 [P] Define render and format ports in
+- [x] T009 [P] Define render and format ports in
       src/PixelSchubser.Application/Ports/IRenderPreviewService.cs and
       src/PixelSchubser.Application/Ports/IFormatAdapterRegistry.cs
-- [ ] T010 Implement application composition root for non-host services in
+- [x] T010 Implement application composition root for non-host services in
       src/PixelSchubser.Application/DependencyInjection/ApplicationServiceCollectionExtensions.cs
-- [ ] T011 Implement baseline undo/redo coordinator abstraction in
+- [x] T011 Implement baseline undo/redo coordinator abstraction in
       src/PixelSchubser.Application/UndoRedo/IUndoRedoCoordinator.cs and
       src/PixelSchubser.Application/UndoRedo/UndoRedoCoordinator.cs
-- [ ] T012 [P] Create test project bootstrap files at
+- [x] T012 [P] Create test project bootstrap files at
       tests/PixelSchubser.Domain.Tests/PixelSchubser.Domain.Tests.csproj and
       tests/PixelSchubser.Application.Tests/PixelSchubser.Application.Tests.csproj
-- [ ] T013 [P] Create adapter test bootstrap files at
+- [x] T013 [P] Create adapter test bootstrap files at
       tests/PixelSchubser.Api.Tests/PixelSchubser.Api.Tests.csproj and
       tests/PixelSchubser.Avalonia.Tests/PixelSchubser.Avalonia.Tests.csproj and
       tests/PixelSchubser.Mcp.Tests/PixelSchubser.Mcp.Tests.csproj
@@ -80,60 +80,60 @@ pixels, applies transforms, renders preview, and validates persisted state.
 
 ### Tests for User Story 1 (REQUIRED)
 
-- [ ] T014 [P] [US1] Add domain unit tests for SpriteProject invariants in
+- [x] T014 [P] [US1] Add domain unit tests for SpriteProject invariants in
       tests/PixelSchubser.Domain.Tests/SpriteProjectTests.cs
-- [ ] T015 [P] [US1] Add domain unit tests for selection-bounded transforms in
+- [x] T015 [P] [US1] Add domain unit tests for selection-bounded transforms in
       tests/PixelSchubser.Domain.Tests/SelectionTransformTests.cs
-- [ ] T016 [P] [US1] Add application use-case tests for set pixel and transform
+- [x] T016 [P] [US1] Add application use-case tests for set pixel and transform
       flows in tests/PixelSchubser.Application.Tests/EditSpriteUseCaseTests.cs
-- [ ] T017 [P] [US1] Add renderer snapshot tests for preview output in
+- [x] T017 [P] [US1] Add renderer snapshot tests for preview output in
       tests/PixelSchubser.Rendering.Tests/PreviewRendererSnapshotTests.cs
-- [ ] T018 [P] [US1] Add headless integration test for create-edit-render
+- [x] T018 [P] [US1] Add headless integration test for create-edit-render
       workflow in tests/PixelSchubser.Application.Tests/HeadlessWorkflowTests.cs
-- [ ] T068 [P] [US1] Add domain unit tests for animation invariants (range, fps,
+- [x] T068 [P] [US1] Add domain unit tests for animation invariants (range, fps,
       mode) in tests/PixelSchubser.Domain.Tests/AnimationInvariantTests.cs
-- [ ] T069 [P] [US1] Add application use-case tests for animation preview query
+- [x] T069 [P] [US1] Add application use-case tests for animation preview query
       and playback parameters in
       tests/PixelSchubser.Application.Tests/AnimationPreviewUseCaseTests.cs
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Implement SpriteProject aggregate in
+- [x] T019 [P] [US1] Implement SpriteProject aggregate in
       src/PixelSchubser.Domain/Entities/SpriteProject.cs
-- [ ] T020 [P] [US1] Implement Sprite entity and pen grid behavior in
+- [x] T020 [P] [US1] Implement Sprite entity and pen grid behavior in
       src/PixelSchubser.Domain/Entities/Sprite.cs and
       src/PixelSchubser.Domain/ValueObjects/PenGrid.cs
-- [ ] T021 [P] [US1] Implement Animation and Selection value objects in
+- [x] T021 [P] [US1] Implement Animation and Selection value objects in
       src/PixelSchubser.Domain/Entities/Animation.cs and
       src/PixelSchubser.Domain/ValueObjects/SelectionBounds.cs
-- [ ] T022 [P] [US1] Implement PlatformProfile and C64 default profile in
+- [x] T022 [P] [US1] Implement PlatformProfile and C64 default profile in
       src/PixelSchubser.Domain/Entities/PlatformProfile.cs and
       src/PixelSchubser.Domain/Profiles/C64PlatformProfile.cs
-- [ ] T023 [US1] Implement edit commands and handlers in
+- [x] T023 [US1] Implement edit commands and handlers in
       src/PixelSchubser.Application/UseCases/Commands/SetPixelCommand.cs and
       src/PixelSchubser.Application/UseCases/Handlers/SetPixelCommandHandler.cs
-- [ ] T024 [US1] Implement transformation command handlers in
+- [x] T024 [US1] Implement transformation command handlers in
       src/PixelSchubser.Application/UseCases/Handlers/TransformSpriteCommandHandler.cs
-- [ ] T025 [US1] Implement project lifecycle commands in
+- [x] T025 [US1] Implement project lifecycle commands in
       src/PixelSchubser.Application/UseCases/Handlers/CreateLoadSaveProjectHandlers.cs
-- [ ] T026 [US1] Implement render model mapper and preview service in
+- [x] T026 [US1] Implement render model mapper and preview service in
       src/PixelSchubser.Rendering/RenderModel/RenderModelMapper.cs and
       src/PixelSchubser.Rendering/Preview/PreviewRenderer.cs
-- [ ] T070 [US1] Implement animation commands and queries (set range/fps/mode,
+- [x] T070 [US1] Implement animation commands and queries (set range/fps/mode,
       get preview) in
       src/PixelSchubser.Application/UseCases/Commands/SetAnimationSettingsCommand.cs
       and
       src/PixelSchubser.Application/UseCases/Queries/GetAnimationPreviewQuery.cs
-- [ ] T071 [US1] Implement animation handlers in
+- [x] T071 [US1] Implement animation handlers in
       src/PixelSchubser.Application/UseCases/Handlers/SetAnimationSettingsCommandHandler.cs
       and
       src/PixelSchubser.Application/UseCases/Handlers/GetAnimationPreviewQueryHandler.cs
-- [ ] T072 [US1] Implement animation timeline preview renderer in
+- [x] T072 [US1] Implement animation timeline preview renderer in
       src/PixelSchubser.Rendering/Preview/AnimationPreviewRenderer.cs
-- [ ] T027 [US1] Implement format adapters for SPM and SPD/SPR in
+- [x] T027 [US1] Implement format adapters for SPM and SPD/SPR in
       src/PixelSchubser.Formats/Adapters/SpmFormatAdapter.cs and
       src/PixelSchubser.Formats/Adapters/SpritePadFormatAdapter.cs
-- [ ] T028 [US1] Implement infrastructure file repository and settings store in
+- [x] T028 [US1] Implement infrastructure file repository and settings store in
       src/PixelSchubser.Infrastructure/Persistence/FileProjectRepository.cs and
       src/PixelSchubser.Infrastructure/Settings/FileSettingsStore.cs
 
