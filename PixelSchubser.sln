@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelSchubser.Mcp.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelSchubser.Rendering.Tests", "tests\PixelSchubser.Rendering.Tests\PixelSchubser.Rendering.Tests.csproj", "{F3337462-4791-4E0E-B23E-081F204B33DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelSchubser.Formats.Tests", "tests\PixelSchubser.Formats.Tests\PixelSchubser.Formats.Tests.csproj", "{92863881-2143-4F6A-A398-9C6EA27FD31C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +215,18 @@ Global
 		{F3337462-4791-4E0E-B23E-081F204B33DD}.Release|x64.Build.0 = Release|Any CPU
 		{F3337462-4791-4E0E-B23E-081F204B33DD}.Release|x86.ActiveCfg = Release|Any CPU
 		{F3337462-4791-4E0E-B23E-081F204B33DD}.Release|x86.Build.0 = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|x64.Build.0 = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Debug|x86.Build.0 = Debug|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|x64.ActiveCfg = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|x64.Build.0 = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|x86.ActiveCfg = Release|Any CPU
+		{92863881-2143-4F6A-A398-9C6EA27FD31C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -232,5 +246,6 @@ Global
 		{4F60AD78-8D41-42A3-A51A-10FCD2380BFF} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{36594418-F220-4842-A156-CB44D9D897F4} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{F3337462-4791-4E0E-B23E-081F204B33DD} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{92863881-2143-4F6A-A398-9C6EA27FD31C} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 EndGlobal

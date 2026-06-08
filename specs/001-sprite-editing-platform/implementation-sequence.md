@@ -127,3 +127,29 @@ Schritt auf die relevanten Stellen in den vorhandenen Implementierungsdetails.
 
 - Umsetzung in der Reihenfolge aus `tasks.md` starten und nach jedem
   Story-Checkpoint die Paritaets- und Performancekriterien pruefen.
+
+## Deferred Web Adapter Parity Contract (Follow-up)
+
+Diese Checkliste definiert die Mindestkriterien, bevor ein Web-Adapter als
+gleichwertiger Adapter akzeptiert werden kann.
+
+- [ ] Web adapter delegates all business behavior to Application use cases and
+      keeps transport/UI concerns isolated.
+- [ ] Command names and required parameters are semantically equivalent to
+      Desktop/API/MCP flows.
+- [ ] Validation semantics match API/MCP conventions (same error categories and
+      stable error codes).
+- [ ] Error payload contract includes explicit version marker and maps to the
+      same domain/application failure reasons.
+- [ ] Project lifecycle flows (create/load/save/import/export) produce parity
+      results with existing adapters for equivalent inputs.
+- [ ] Editing flows (set pixel, selection fill, transform) match parity outputs
+      for deterministic regression fixtures.
+- [ ] Animation flows (set settings, preview) match parity outputs for frame
+      lists and mode handling.
+- [ ] Contract tests include versioned Web adapter endpoints/messages and a
+      compatibility policy for non-breaking evolution.
+- [ ] Performance acceptance checks include edit/preview and import/export paths
+      with the same p95 budgets used in the current platform slice.
+- [ ] Adapter boundary review confirms no direct dependency from Web adapter to
+      Avalonia, API host internals, or MCP host internals.

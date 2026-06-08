@@ -1,0 +1,333 @@
+<Window xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  x:Class="PixelSchubser.Avalonia.MainWindow"
+  x:Name="Root"
+  Title="PixelSchubser"
+  Width="1440"
+  Height="920"
+  MinWidth="1180"
+  MinHeight="760">
+  <Grid RowDefinitions="Auto,*,Auto" Background="#F5EBDD">
+    <Border Background="#183A37" Padding="20,16">
+      <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="16">
+        <StackPanel Spacing="4">
+          <TextBlock Text="PixelSchubser"
+            Foreground="#F4F1DE"
+            FontSize="30"
+            FontWeight="Bold" />
+          <TextBlock Text="Desktop sprite editor on the shared application core"
+            Foreground="#D8D3C4" />
+        </StackPanel>
+
+        <Button Grid.Column="1"
+          Content="New Project"
+          Command="{Binding CreateProjectCommand}"
+          MinWidth="120" />
+
+        <Button Grid.Column="2"
+          Content="Refresh"
+          Command="{Binding RefreshCommand}"
+          MinWidth="96" />
+
+        <Button Grid.Column="3"
+          Content="Clear Sprite"
+          Command="{Binding ClearSpriteCommand}"
+          MinWidth="110" />
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="1" Margin="20" ColumnDefinitions="270,*,340" ColumnSpacing="20">
+      <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Spacing="18">
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Project"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <TextBlock Text="Name" />
+              <TextBox Text="{Binding ProjectName}" Watermark="Project name" />
+              <TextBlock Text="Profile" />
+              <TextBlock Text="{Binding ProfileName}" FontWeight="SemiBold" />
+              <TextBlock Text="Project Id" />
+              <TextBox Text="{Binding CurrentProjectId}" IsReadOnly="True" />
+            </StackPanel>
+          </Border>
+
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Palette"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <ItemsControl ItemsSource="{Binding Palette}">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <UniformGrid Columns="4" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Button Background="{Binding Brush}"
+                      Command="{Binding #Root.DataContext.SelectPenCommand}"
+                      CommandParameter="{Binding}"
+                      BorderBrush="#183A37"
+                      BorderThickness="2"
+                      Height="46"
+                      Width="46"
+                      Margin="2">
+                      <TextBlock Text="{Binding PenValue}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#F4F1DE" />
+                    </Button>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              <TextBlock Text="{Binding SelectedPen, StringFormat='Selected pen: {0}'}" />
+            </StackPanel>
+          </Border>
+
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Sprite Strip"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <ItemsControl ItemsSource="{Binding SpriteStrip}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Button Content="{Binding Name}"
+                      Command="{Binding #Root.DataContext.SelectSpriteCommand}"
+                      CommandParameter="{Binding}"
+                      HorizontalContentAlignment="Left"
+                      Margin="0,0,0,6" />
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+
+      <Grid Grid.Column="1" RowDefinitions="Auto,*,Auto" RowSpacing="16">
+        <Border Background="#F4F1DE" Padding="16" CornerRadius="16">
+          <Grid ColumnDefinitions="*,Auto">
+            <StackPanel Spacing="6">
+              <TextBlock Text="Editor Canvas"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <TextBlock
+                Text="Click cells to paint. Line and SelectRect modes use two clicks (start/end), then you can apply move/copy or fill operations from the tool panel."
+                TextWrapping="Wrap" />
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <TextBlock Text="Tool mode:" VerticalAlignment="Center" />
+                <ComboBox Width="150"
+                  ItemsSource="{Binding ToolModes}"
+                  SelectedItem="{Binding SelectedToolMode}" />
+              </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Spacing="4" HorizontalAlignment="Right">
+              <TextBlock Text="{Binding SpriteWidth, StringFormat='Width: {0}'}" />
+              <TextBlock Text="{Binding SpriteHeight, StringFormat='Height: {0}'}" />
+            </StackPanel>
+          </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="#FFF9F0" CornerRadius="20" Padding="18">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+              <ItemsControl ItemsSource="{Binding SpriteCells}">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <UniformGrid Columns="24" Rows="21" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Button Background="{Binding Brush}"
+                      PointerPressed="CanvasCell_PointerPressed"
+                      PointerMoved="CanvasCell_PointerMoved"
+                      PointerReleased="CanvasCell_PointerReleased"
+                      PointerEntered="CanvasCell_PointerEntered"
+                      BorderBrush="#D5C7B5"
+                      BorderThickness="0.5"
+                      Width="24"
+                      Height="24"
+                      Padding="0"
+                      Margin="0.4" />
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+
+              <ItemsControl ItemsSource="{Binding PreviewCells}"
+                IsHitTestVisible="False">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <UniformGrid Columns="24" Rows="21" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Border Background="{Binding Brush}"
+                      BorderBrush="{Binding Brush}"
+                      BorderThickness="1"
+                      Width="24"
+                      Height="24"
+                      Padding="0"
+                      Margin="0.4" />
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Grid>
+          </ScrollViewer>
+        </Border>
+
+        <Border Grid.Row="2" Background="#F4F1DE" Padding="16" CornerRadius="16">
+          <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+            <StackPanel Spacing="6">
+              <TextBlock Text="Preview" FontWeight="SemiBold" />
+              <TextBlock Text="{Binding PreviewSummary}" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Spacing="6">
+              <TextBlock Text="Animation Preview" FontWeight="SemiBold" />
+              <TextBlock Text="{Binding AnimationPreviewSummary}" TextWrapping="Wrap" />
+            </StackPanel>
+          </Grid>
+        </Border>
+      </Grid>
+
+      <ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Spacing="18">
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Tools"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <TextBlock Text="Line" FontWeight="SemiBold" />
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="8"
+                RowSpacing="8">
+                <TextBox Text="{Binding LineStartX}" Watermark="X1" />
+                <TextBox Grid.Column="1" Text="{Binding LineStartY}" Watermark="Y1" />
+                <TextBox Grid.Row="1" Text="{Binding LineEndX}" Watermark="X2" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LineEndY}" Watermark="Y2" />
+                <Button Grid.Row="2" Grid.ColumnSpan="2"
+                  Content="Draw Line"
+                  Command="{Binding DrawLineCommand}" />
+              </Grid>
+              <Separator />
+              <TextBlock Text="Flood Fill" FontWeight="SemiBold" />
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="8"
+                RowSpacing="8">
+                <TextBox Text="{Binding FloodFillX}" Watermark="X" />
+                <TextBox Grid.Column="1" Text="{Binding FloodFillY}" Watermark="Y" />
+                <Button Grid.Row="1" Grid.ColumnSpan="2"
+                  Content="Flood Fill"
+                  Command="{Binding FloodFillCommand}" />
+              </Grid>
+              <Separator />
+              <TextBlock Text="Transforms" FontWeight="SemiBold" />
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="8"
+                RowSpacing="8">
+                <Button Content="Flip Horizontal"
+                  Command="{Binding FlipHorizontalCommand}" />
+                <Button Grid.Column="1"
+                  Content="Flip Vertical"
+                  Command="{Binding FlipVerticalCommand}" />
+                <Button Grid.Row="1"
+                  Content="Shift Left"
+                  Command="{Binding ShiftLeftCommand}" />
+                <Button Grid.Row="1" Grid.Column="1"
+                  Content="Shift Right"
+                  Command="{Binding ShiftRightCommand}" />
+                <Button Grid.Row="2"
+                  Content="Shift Up"
+                  Command="{Binding ShiftUpCommand}" />
+                <Button Grid.Row="2" Grid.Column="1"
+                  Content="Shift Down"
+                  Command="{Binding ShiftDownCommand}" />
+                <Button Grid.Row="3" Grid.ColumnSpan="2"
+                  Content="Invert"
+                  Command="{Binding InvertCommand}" />
+              </Grid>
+            </StackPanel>
+          </Border>
+
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Selection"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                ColumnSpacing="8"
+                RowSpacing="8">
+                <TextBox Text="{Binding SelectionX1}" Watermark="X1" />
+                <TextBox Grid.Column="1" Text="{Binding SelectionY1}" Watermark="Y1" />
+                <TextBox Grid.Row="1" Text="{Binding SelectionX2}" Watermark="X2" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectionY2}" Watermark="Y2" />
+                <TextBox Grid.Row="2" Text="{Binding SelectionTargetX}" Watermark="Target X" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectionTargetY}"
+                  Watermark="Target Y" />
+                <Button Grid.Row="3" Grid.ColumnSpan="2"
+                  Content="Fill Selection"
+                  Command="{Binding FillSelectionCommand}" />
+                <Grid Grid.Row="4" Grid.ColumnSpan="2" ColumnDefinitions="*,*" ColumnSpacing="8">
+                  <Button Content="Copy Selection"
+                    Command="{Binding CopySelectionCommand}" />
+                  <Button Grid.Column="1"
+                    Content="Move Selection"
+                    Command="{Binding MoveSelectionCommand}" />
+                </Grid>
+              </Grid>
+            </StackPanel>
+          </Border>
+
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Animation"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <TextBox Text="{Binding AnimationStart}" Watermark="Start sprite index" />
+              <TextBox Text="{Binding AnimationEnd}" Watermark="End sprite index" />
+              <TextBox Text="{Binding AnimationFps}" Watermark="FPS" />
+              <ComboBox ItemsSource="{Binding AnimationModes}"
+                SelectedItem="{Binding SelectedAnimationMode}" />
+              <Button Content="Apply Animation"
+                Command="{Binding ApplyAnimationCommand}" />
+              <ItemsControl ItemsSource="{Binding AnimationSummaries}" />
+            </StackPanel>
+          </Border>
+
+          <Border Padding="16" Background="#F4F1DE" CornerRadius="16">
+            <StackPanel Spacing="10">
+              <TextBlock Text="Import / Export"
+                FontSize="20"
+                FontWeight="SemiBold" />
+              <TextBlock Text="Import format" />
+              <ComboBox ItemsSource="{Binding AvailableFormats}"
+                SelectedItem="{Binding ImportFormat}" />
+              <TextBox Text="{Binding ImportPayload}"
+                Watermark="Import payload"
+                AcceptsReturn="True"
+                MinHeight="80" />
+              <Button Content="Import Project"
+                Command="{Binding ImportCommand}" />
+              <Separator />
+              <TextBlock Text="Export format" />
+              <ComboBox ItemsSource="{Binding AvailableFormats}"
+                SelectedItem="{Binding ExportFormat}" />
+              <Button Content="Export Project"
+                Command="{Binding ExportCommand}" />
+              <TextBox Text="{Binding ExportPayload}"
+                IsReadOnly="True"
+                AcceptsReturn="True"
+                MinHeight="120" />
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+    </Grid>
+
+    <Border Grid.Row="2" Background="#183A37" Padding="18,12">
+      <TextBlock Text="{Binding StatusMessage}"
+        Foreground="#F4F1DE" />
+    </Border>
+  </Grid>
+</Window>

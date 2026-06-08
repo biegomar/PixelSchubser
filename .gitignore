@@ -38,6 +38,7 @@ ScaffoldingReadMe.txt
 
 # dotenv environment variables file
 .env
+.env*
 
 # Others
 ~$*
@@ -68,4 +69,5 @@ packages/
 Thumbs.db
 *.tmp
 *.swp
+.vscode/
 .idea/

@@ -152,80 +152,80 @@ outcomes.
 
 ### Tests for User Story 2 (REQUIRED)
 
-- [ ] T029 [P] [US2] Add API contract tests for project endpoints in
+- [x] T029 [P] [US2] Add API contract tests for project endpoints in
       tests/PixelSchubser.Api.Tests/Contracts/ProjectEndpointsContractTests.cs
-- [ ] T030 [P] [US2] Add API contract tests for sprite edit endpoints in
+- [x] T030 [P] [US2] Add API contract tests for sprite edit endpoints in
       tests/PixelSchubser.Api.Tests/Contracts/SpriteEditEndpointsContractTests.cs
-- [ ] T031 [P] [US2] Add API integration tests for validation and error mapping
+- [x] T031 [P] [US2] Add API integration tests for validation and error mapping
       in
       tests/PixelSchubser.Api.Tests/Integration/ValidationAndErrorMappingTests.cs
-- [ ] T032 [P] [US2] Add cross-adapter parity tests between API and application
+- [x] T032 [P] [US2] Add cross-adapter parity tests between API and application
       handlers in
       tests/PixelSchubser.Api.Tests/Integration/ApiCoreParityTests.cs
-- [ ] T033 [P] [US2] Add regression test for unsupported format error behavior
+- [x] T033 [P] [US2] Add regression test for unsupported format error behavior
       in
       tests/PixelSchubser.Application.Tests/UnsupportedFormatRegressionTests.cs
-- [ ] T073 [P] [US2] Add API contract tests for animation preview and settings
+- [x] T073 [P] [US2] Add API contract tests for animation preview and settings
       endpoints in
       tests/PixelSchubser.Api.Tests/Contracts/AnimationEndpointsContractTests.cs
-- [ ] T059 [P] [US2] Add MCP contract tests for project and sprite tools in
+- [x] T059 [P] [US2] Add MCP contract tests for project and sprite tools in
       tests/PixelSchubser.Mcp.Tests/Contracts/McpToolsContractTests.cs
-- [ ] T060 [P] [US2] Add MCP integration tests for parity and validation in
+- [x] T060 [P] [US2] Add MCP integration tests for parity and validation in
       tests/PixelSchubser.Mcp.Tests/Integration/McpCoreParityTests.cs
-- [ ] T061 [P] [US2] Add self-contained MCP publish verification test in
+- [x] T061 [P] [US2] Add self-contained MCP publish verification test in
       tests/PixelSchubser.Mcp.Tests/Deployment/SelfContainedPublishVerificationTests.cs
-- [ ] T074 [P] [US2] Add MCP contract tests for animation tools in
+- [x] T074 [P] [US2] Add MCP contract tests for animation tools in
       tests/PixelSchubser.Mcp.Tests/Contracts/McpAnimationToolsContractTests.cs
-- [ ] T075 [P] [US2] Add cross-adapter animation parity tests (Core/API/MCP) in
+- [x] T075 [P] [US2] Add cross-adapter animation parity tests (Core/API/MCP) in
       tests/PixelSchubser.Application.Tests/AnimationParityIntegrationTests.cs
-- [ ] T081 [P] [US2] Add API contract versioning tests for route groups and
+- [x] T081 [P] [US2] Add API contract versioning tests for route groups and
       backward-compatible payload evolution in
       tests/PixelSchubser.Api.Tests/Contracts/ApiVersioningContractTests.cs
-- [ ] T082 [P] [US2] Add MCP contract versioning tests for tool namespace and
+- [x] T082 [P] [US2] Add MCP contract versioning tests for tool namespace and
       version negotiation behavior in
       tests/PixelSchubser.Mcp.Tests/Contracts/McpVersioningContractTests.cs
 
 ### Implementation for User Story 2
 
-- [ ] T034 [US2] Create API composition root and dependency wiring in
+- [x] T034 [US2] Create API composition root and dependency wiring in
       src/PixelSchubser.Api/Program.cs
-- [ ] T035 [US2] Implement project management endpoints in
+- [x] T035 [US2] Implement project management endpoints in
       src/PixelSchubser.Api/Endpoints/ProjectEndpoints.cs
-- [ ] T036 [US2] Implement sprite editing endpoints in
+- [x] T036 [US2] Implement sprite editing endpoints in
       src/PixelSchubser.Api/Endpoints/SpriteEditEndpoints.cs
-- [ ] T037 [US2] Implement rendering and preview endpoints in
+- [x] T037 [US2] Implement rendering and preview endpoints in
       src/PixelSchubser.Api/Endpoints/PreviewEndpoints.cs
-- [ ] T038 [US2] Implement import/export endpoints in
+- [x] T038 [US2] Implement import/export endpoints in
       src/PixelSchubser.Api/Endpoints/FormatEndpoints.cs
-- [ ] T076 [US2] Implement API animation endpoints in
+- [x] T076 [US2] Implement API animation endpoints in
       src/PixelSchubser.Api/Endpoints/AnimationEndpoints.cs
-- [ ] T083 [US2] Implement API contract versioning strategy (v1 route group,
+- [x] T083 [US2] Implement API contract versioning strategy (v1 route group,
       version policy, and deprecation metadata) in
       src/PixelSchubser.Api/Program.cs and
       src/PixelSchubser.Api/Configuration/ApiVersioningOptions.cs
-- [ ] T039 [US2] Implement API DTO contracts in
+- [x] T039 [US2] Implement API DTO contracts in
       src/PixelSchubser.Api/Contracts/Requests/EditSpriteRequest.cs and
       src/PixelSchubser.Api/Contracts/Responses/ProjectResponse.cs
-- [ ] T040 [US2] Implement consistent problem details mapping in
+- [x] T040 [US2] Implement consistent problem details mapping in
       src/PixelSchubser.Api/Errors/ProblemDetailsMapper.cs
-- [ ] T041 [US2] Add API host configuration limits for payload and path
+- [x] T041 [US2] Add API host configuration limits for payload and path
       validation in src/PixelSchubser.Api/Configuration/ApiHostOptions.cs
-- [ ] T062 [US2] Create MCP composition root and dependency wiring in
+- [x] T062 [US2] Create MCP composition root and dependency wiring in
       src/PixelSchubser.Mcp/Program.cs
-- [ ] T063 [US2] Implement MCP project and lifecycle tools in
+- [x] T063 [US2] Implement MCP project and lifecycle tools in
       src/PixelSchubser.Mcp/Tools/ProjectTools.cs
-- [ ] T064 [US2] Implement MCP sprite edit and transform tools in
+- [x] T064 [US2] Implement MCP sprite edit and transform tools in
       src/PixelSchubser.Mcp/Tools/SpriteEditTools.cs
-- [ ] T065 [US2] Implement MCP render and export tools in
+- [x] T065 [US2] Implement MCP render and export tools in
       src/PixelSchubser.Mcp/Tools/RenderExportTools.cs
-- [ ] T077 [US2] Implement MCP animation tools in
+- [x] T077 [US2] Implement MCP animation tools in
       src/PixelSchubser.Mcp/Tools/AnimationTools.cs
-- [ ] T084 [US2] Implement MCP tool contract versioning and compatibility
+- [x] T084 [US2] Implement MCP tool contract versioning and compatibility
       manifest in src/PixelSchubser.Mcp/Contracts/McpContractVersion.cs and
       src/PixelSchubser.Mcp/Configuration/McpContractCompatibilityOptions.cs
-- [ ] T066 [US2] Implement MCP error and validation mapping in
+- [x] T066 [US2] Implement MCP error and validation mapping in
       src/PixelSchubser.Mcp/Errors/McpErrorMapper.cs
-- [ ] T067 [US2] Add self-contained single-file publish profile in
+- [x] T067 [US2] Add self-contained single-file publish profile in
       src/PixelSchubser.Mcp/Properties/PublishProfiles/SelfContained.pubxml
 
 **Checkpoint**: User Stories 1 and 2 are both independently functional.
@@ -242,33 +242,33 @@ extension and confirm existing core behavior remains unchanged.
 
 ### Tests for User Story 3 (REQUIRED)
 
-- [ ] T042 [P] [US3] Add unit tests for profile registry behavior in
+- [x] T042 [P] [US3] Add unit tests for profile registry behavior in
       tests/PixelSchubser.Application.Tests/ProfileRegistryTests.cs
-- [ ] T043 [P] [US3] Add unit tests for format adapter registry and priority in
+- [x] T043 [P] [US3] Add unit tests for format adapter registry and priority in
       tests/PixelSchubser.Formats.Tests/FormatAdapterRegistryTests.cs
-- [ ] T044 [P] [US3] Add integration tests for adding a new export adapter
+- [x] T044 [P] [US3] Add integration tests for adding a new export adapter
       without core changes in
       tests/PixelSchubser.Formats.Tests/Integration/NewAdapterIntegrationTests.cs
-- [ ] T045 [P] [US3] Add API integration tests for profile selection and
+- [x] T045 [P] [US3] Add API integration tests for profile selection and
       validation in
       tests/PixelSchubser.Api.Tests/Integration/ProfileSelectionTests.cs
 
 ### Implementation for User Story 3
 
-- [ ] T046 [US3] Implement platform profile registry in
+- [x] T046 [US3] Implement platform profile registry in
       src/PixelSchubser.Application/Profiles/IPlatformProfileRegistry.cs and
       src/PixelSchubser.Application/Profiles/PlatformProfileRegistry.cs
-- [ ] T047 [US3] Implement format adapter registry in
+- [x] T047 [US3] Implement format adapter registry in
       src/PixelSchubser.Formats/Registry/FormatAdapterRegistry.cs
-- [ ] T048 [US3] Implement pluggable export pipeline in
+- [x] T048 [US3] Implement pluggable export pipeline in
       src/PixelSchubser.Application/UseCases/Handlers/ExportProjectCommandHandler.cs
-- [ ] T049 [US3] Add extension registration module for formats and profiles in
+- [x] T049 [US3] Add extension registration module for formats and profiles in
       src/PixelSchubser.Infrastructure/DependencyInjection/ExtensionRegistration.cs
-- [ ] T050 [US3] Implement sample additional platform profile in
+- [x] T050 [US3] Implement sample additional platform profile in
       src/PixelSchubser.Domain/Profiles/NesPlatformProfile.cs
-- [ ] T051 [US3] Implement sample additional exporter adapter in
+- [x] T051 [US3] Implement sample additional exporter adapter in
       src/PixelSchubser.Formats/Adapters/NesSpriteFormatAdapter.cs
-- [ ] T052 [US3] Add API endpoints for profile discovery and selection in
+- [x] T052 [US3] Add API endpoints for profile discovery and selection in
       src/PixelSchubser.Api/Endpoints/ProfileEndpoints.cs
 
 **Checkpoint**: All three user stories are independently functional.
@@ -279,23 +279,23 @@ extension and confirm existing core behavior remains unchanged.
 
 **Purpose**: Final quality hardening across all stories.
 
-- [ ] T053 [P] Add architecture guard tests for forbidden layer dependencies in
+- [x] T053 [P] Add architecture guard tests for forbidden layer dependencies in
       tests/PixelSchubser.Application.Tests/Architecture/DependencyRuleTests.cs
-- [ ] T054 Add performance benchmark tests for edit and preview budgets in
+- [x] T054 Add performance benchmark tests for edit and preview budgets in
       tests/PixelSchubser.Application.Tests/Performance/EditAndPreviewPerformanceTests.cs
-- [ ] T079 [P] Add performance benchmark tests for import and export paths in
+- [x] T079 [P] Add performance benchmark tests for import and export paths in
       tests/PixelSchubser.Application.Tests/Performance/ImportExportPerformanceTests.cs
-- [ ] T080 Add import/export performance threshold validation and reporting in
+- [x] T080 Add import/export performance threshold validation and reporting in
       specs/001-sprite-editing-platform/quickstart.md
-- [ ] T055 [P] Add documentation for API and Avalonia adapter boundaries in
+- [x] T055 [P] Add documentation for API and Avalonia adapter boundaries in
       specs/001-sprite-editing-platform/quickstart.md
-- [ ] T056 Add structured logging adapter in
+- [x] T056 Add structured logging adapter in
       src/PixelSchubser.Infrastructure/Logging/StructuredLoggerAdapter.cs
-- [ ] T057 [P] Add final end-to-end regression scenario in
+- [x] T057 [P] Add final end-to-end regression scenario in
       tests/PixelSchubser.Application.Tests/HeadlessEndToEndRegressionTests.cs
-- [ ] T058 Run quickstart validation and record results in
+- [x] T058 Run quickstart validation and record results in
       specs/001-sprite-editing-platform/quickstart.md
-- [ ] T078 Define deferred web adapter parity contract and acceptance checklist
+- [x] T078 Define deferred web adapter parity contract and acceptance checklist
       in specs/001-sprite-editing-platform/implementation-sequence.md
 
 ---

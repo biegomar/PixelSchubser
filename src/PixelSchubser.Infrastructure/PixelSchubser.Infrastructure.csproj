@@ -3,6 +3,14 @@
   <ItemGroup>
     <ProjectReference Include="..\PixelSchubser.Application\PixelSchubser.Application.csproj" />
     <ProjectReference Include="..\PixelSchubser.Domain\PixelSchubser.Domain.csproj" />
+    <ProjectReference Include="..\PixelSchubser.Formats\PixelSchubser.Formats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+      Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions"
+      Version="10.0.0" />
   </ItemGroup>
 
   <PropertyGroup>

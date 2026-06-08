@@ -22,6 +22,8 @@
     <ProjectReference Include="..\..\src\PixelSchubser.Application\PixelSchubser.Application.csproj" />
     <ProjectReference Include="..\..\src\PixelSchubser.Domain\PixelSchubser.Domain.csproj" />
     <ProjectReference Include="..\..\src\PixelSchubser.Rendering\PixelSchubser.Rendering.csproj" />
+    <ProjectReference Include="..\..\src\PixelSchubser.Api\PixelSchubser.Api.csproj" />
+    <ProjectReference Include="..\..\src\PixelSchubser.Mcp\PixelSchubser.Mcp.csproj" />
   </ItemGroup>
 
 </Project>
